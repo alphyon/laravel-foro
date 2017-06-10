@@ -22,4 +22,15 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         return $app;
     }
+
+/**Creamos un usuario pro defecto para hacer validadciones cuando sea necesario 
+ * que este presenta en alguna prueba
+ */
+    public function defaultUser()
+    {
+        if($this->defaultUser){
+            return $this->defaultUser;
+        }
+        return $this->defaultUser = factory(\App\User::class)->create();
+    }
 }
