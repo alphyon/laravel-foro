@@ -72,7 +72,7 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             //en caso de usar mac agregar esta linea
-            //'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+            'unix_socket'   => '/tmp/mysql/mysql.sock',
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE_TEST', 'curso_test'),
             'username' => env('MYSQL_USER'),env('DB_USERNAME', 'root'),
