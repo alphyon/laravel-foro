@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
+    use DatabaseMigrations;
     /**
      * A basic functional test example.
      *
@@ -13,7 +14,14 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
-        $this->visit('/')
-             ->see('Laravel');
+        
+        $user = factory(\App\User::class)->create([
+            'name' => 'Jose Chavarria', //dato que se debe validar 
+            'email' => 'alphyon21@gmail.com', //dato que se debe validar 
+        ]);
+        $this->actingAs($user, 'api') //simular un usuario autenticado 
+             ->visit('api/user')
+             ->see('Jose Chavarria')
+             ->see('alphyon21@gmail.com');
     }
 }
