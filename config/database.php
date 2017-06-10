@@ -70,7 +70,7 @@ return [
 /**configuracion para pruebas  */
         'mysql_test' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', '127.0.0.1'),
             //en caso de usar mac agregar esta linea
             //'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'port' => env('DB_PORT', '3306'),
